@@ -1,0 +1,22 @@
+buildscript {
+    repositories {
+        google()
+        mavenCentral()
+        maven { url "https://jitpack.io" }
+    }
+    dependencies {
+        classpath "com.android.tools.build:gradle:8.0.0"
+        classpath "io.realm:realm-gradle-plugin:10.15.1"
+        classpath "com.google.gms:google-services:4.3.15"
+    }
+}
+
+/*
+DO NOT put repositories {} here (allprojects/subprojects),
+because your project is using dependencyResolutionManagement
+in settings.gradle with repositoriesMode FAIL_ON_PROJECT_REPOS.
+*/
+
+tasks.register("clean", Delete) {
+    delete rootProject.buildDir
+}
